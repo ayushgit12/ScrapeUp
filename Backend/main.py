@@ -116,7 +116,6 @@ def refresh_prices_here():
                # Convert ObjectId to string
                item['_id'] = str(item['_id'])
                items.append(item)
-          print(items)
 
           for item in items:
                url = item['Product_Link']
@@ -151,6 +150,7 @@ def refresh_prices_here():
                               return {"Error": "Error Occured"}
                               continue;
                     else:
+                         print(url)
                          print("Product not found")
                          return {"Error": "Product not found"}
                          continue
