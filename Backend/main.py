@@ -141,6 +141,9 @@ def refresh_prices_here():
                          print(f"Product Link: {url}")
                          print(f"Price: {price}")
 
+                         if(price == item['Prices'][-1]['Price']):
+                              continue
+
                          try:
                               collection.update_one(
                                    {"Product_Link": url},
@@ -148,12 +151,11 @@ def refresh_prices_here():
                          except Exception as e:
                               print(f"Error{e}")
                               return {"Error": "Error Occured"}
-                              continue;
                     else:
                          print(url)
                          print("Product not found")
                          return {"Error": "Product not found"}
-                         continue
+
                
           
 
